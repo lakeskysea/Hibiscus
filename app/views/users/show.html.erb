@@ -10,14 +10,17 @@
 
 <span class="profile_emails">Email:  </span> <span class="profile_emails_values"><%=  @user.email %></span>  <br><br>
 <span class="profile_emails">Gravatar Email:  </span> <span class="profile_emails_values"><%= @user.gravatar_email %></span> <br><br>
-<span class="profile_emails">Points: <%=  @user.points %></span>
+<span class="profile_emails">Points: </span> <span class="profile_emails_values"><%=  @user.points %></span><br><br>
+<span class="profile_emails">Digest Frequency: </span> <span class="profile_emails_values"><%=  @user.digest_frequency %></span>
 
 <br><br><br><br>
 
 <br>
 <section id="authentications">
 <h3>
+<% if can? :update, @user  %>
   <%= link_to 'Authentications', authentications_path %></h3>
+<% end %>
   <br><br><br><br>
 </section>
 </div>
