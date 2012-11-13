@@ -35,8 +35,8 @@ module Searchify
     tmp = ENV['SEARCHIFY_HIBISCUS_INDEX']
     index = api.indexes(ENV['SEARCHIFY_HIBISCUS_INDEX'] || 'hibiscus')
     #index.document(self.id.to_s).add({ :title => self.title, :timestamp => self.created_at.to_i, :text => self.content.gsub(/<\/?[^>]*>/, ""), :url => url, :id => self.id.to_s})
-    index.document(self.oldSlug).delete unless self.oldSlug.blank?
-    index.document(self.slug).add({ :title => self.title, :timestamp => self.created_at.to_i,
+    #index.document(self.oldSlug).delete unless self.oldSlug.blank?
+    index.document(self.id.to_s).add({ :title => self.title, :timestamp => self.created_at.to_i,
                                     :text => self.content.gsub(/<\/?[^>]*>/, ""), :url => url, :id => self.id.to_s})
   end
 
